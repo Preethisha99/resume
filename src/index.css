@@ -1,0 +1,162 @@
+/* Import Google Font and set default styles */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+
+* {
+  font-family: "Crimson Text", serif;
+}
+
+/* Common styles */
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-form {
+  max-width: 400px;
+  width: 100%;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.input-container input:focus {
+  border-color: #1890ff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #096dd9;
+}
+
+/* Hospital Info styles */
+.hospital-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hospital-info h4 {
+  color: white;
+  font-size: 45px;
+  text-align: left;
+  background-color: rgb(208, 255, 0);
+  margin-bottom: -10px;
+  padding-left: 10px;
+}
+
+.hospital-info h5 {
+  color: #096dd9;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.hospital-info p {
+  color: #096dd9;
+  font-size: 15px;
+  margin-bottom: -50px;
+  text-align: left;
+}
+
+/* Doctor Photo styles */
+.doctor-photo {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 250px;
+  margin-bottom: -80px;
+}
+
+.doc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 50px;
+}
+
+.doc-form {
+  max-width: 1000px;
+  /* width: 100%; */
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  padding: 500px 200px -10px 550px;
+  /* font-size: 300px; */
+}
+
+.doctor-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.doctor-info h4 {
+  color: white;
+  font-size: 45px;
+  text-align: left;
+  background-color: rgb(30, 0, 255);
+  margin-bottom: -10px;
+  padding-left: 10px;
+}
+
+.appointment-photo {
+  width: 250px;
+  height: 400px;
+  border-radius: 50%;
+  margin-left: 600px;
+  margin-bottom: -250px;
+}
+/* -------------------------------------- */
+.gradient-background {
+  background: linear-gradient(to right, #ff8a00, #da1b60); /* Adjust colors as needed */
+}
+.mt-n-4{
+  margin-top:-4.5rem
+}
+/* ------------------------- */
+@media (min-width:320px){
+  .mobs{
+    max-width: 105px !important;
+  }
+}
+@media (max-width:320px){
+  .mobs{
+    max-width: 105px !important;
+  }
+}
+
+.letter-spacing{
+  letter-spacing:  3px;
+}
+.custom-img{
+  max-width: 50% !important;
+  height: 90% !important;
+}

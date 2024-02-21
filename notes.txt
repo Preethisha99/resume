@@ -1,0 +1,138 @@
+import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+import axios from "axios";
+import doctorPhoto from "../assets/doctor.png";
+
+const PatientForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    age: 0,
+    email: "",
+    phone: "",
+    Reason: "",
+    token: generateRandomToken(),
+  });
+
+  function generateRandomToken() {
+    const randomNum = Math.floor(100 + Math.random() * 900);
+    return `DOC${randomNum}`;
+  }
+
+  useEffect(() => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      token: generateRandomToken(),
+    }));
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/api/patient/book", formData);
+      toast.success("Booked successfully!");
+      console.log("Booked registered:", response.data);
+    } catch (error) {
+      console.error("Error registering Book:", error.response.data.error);
+      toast.error("Failed to register Book");
+    }
+  };
+
+  return (
+    <div className="auth">
+      <div className="auth-form">
+        <div className="hospital-info">
+          <h5>Health Care Clinic</h5>
+          <p>Bangalore</p>
+          <div className="doctor-photo-container">
+            <img className="doctor-photo" src={doctorPhoto} alt="Doctor" />
+          </div>
+          <h4>Token Booking</h4>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="input-container">
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="age">Age:</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                placeholder="Enter your age"
+                value={formData.age}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone">Phone:</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="Reason">Reason:</label>
+              <input
+                type="text"
+                id="Reason"
+                name="Reason"
+                placeholder="Enter the reason for the visit"
+                value={formData.Reason}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="token">Token:</label>
+              <input
+                type="text"
+                id="token"
+                name="token"
+                placeholder="Enter the token"
+                value={formData.token}
+                onChange={handleChange}
+                readOnly
+              />
+            </div>
+          </div>
+          <div className="button-container">
+            <button type="submit">Book</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default PatientForm;

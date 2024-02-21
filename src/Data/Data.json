@@ -1,0 +1,25 @@
+ [
+ {
+     "obj":{
+        "id": 1,
+       " objective": "I'm MERN Full-Stack Developer , interpersonal skills and team player. Currently looking for new opportunities in reputed organisation and i ca make my level best in technology"
+
+    },
+    "pro":{
+        "id": 1,
+        "eShop": "React JS BootStrap, JavaScript , CSS.",
+        "features": "Search the product , check the Product details and add the product to the cart."
+    },
+    "intern": {
+        "id": 1,
+        "proName": "ATS (Application Tracking Software)",
+        "proDesc": "An ATS helps companies organize candidate for hiring and recruitment purpose",
+        "proPer": "2 Month",
+        "temSiz": "2F, 3M",
+        "Tech": "MERN"
+    }
+ }
+ ]
+
+
+    
